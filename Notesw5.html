@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notes Week 5</title>
+</head>
+<body>
+	<h1>DOM Manipulation</h1>
+<input type="text" id="nameInput" placeholder="Enter Your Name">
+<button onclick="pressActivate()" id="deactivateBtn">Deactivate Button</button>
+<button onclick="pressMe()" id="btnPress">Press Me!</button>
+
+<p id="message"></p>
+
+
+<script type="text/javascript">
+
+
+		function pressActivate(){
+			if (document.getElementById("btnPress").disable == true) {
+				document.getElementById("btnPress").removeAttribute("disabled")
+				document.getElementById("deactivateBtn").innerHTML = "Deactivate Button";
+				
+			}
+
+			else {
+			document.getElementById("btnPress").setAttribute("disabled", true);
+			document.getElementById("deactivateBtn").innerHTML = "Activate Button";
+			}
+		
+		}
+		function pressMe(){
+
+			// When it is on the right side, its a getter ( we get the valuefrom it)
+			var name = document.getElementById("nameInput").value;
+			alert("Hello "+name);
+
+			document.getElementById("message").innerHTML = "Hello "+name; // pamer input dibawah kotak yang masukkan data
+
+			//When it is on the left side, its a stter (we set a value into it) - kosongkan box for next input
+			document.getElementById("nameInput").value = "";
+
+
+		}
+
+
+
+</script>
+
+</body>
+</html>
